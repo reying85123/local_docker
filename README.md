@@ -2,17 +2,17 @@
 
 ## 啟動mariadb
 ```bash
-    docker compose -f docker-compose.db.yml up -d   
+docker compose -f docker-compose.db.yml up -d   
 ```
 
 ## 啟動php
 ```bash
-    docker compose -f docker-compose.php.yml up -d   
+docker compose -f docker-compose.php.yml up -d   
 ```
 
 ## 啟動nginx
 ```bash
-    docker compose -f docker-compose.nginx.yml up -d   
+docker compose -f docker-compose.nginx.yml up -d   
 ```
 
 ## 其他
