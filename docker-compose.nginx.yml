@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: local-nginx
+    ports:
+      - "127.0.0.1:80:80"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./html:/var/www/html
+    restart: always
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    name: local_app_network
+    driver: bridge
+    external: false

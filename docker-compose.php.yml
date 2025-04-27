@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  php:
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    container_name: my-php
+    volumes:
+      - ./html:/var/www/html
+    restart: always
+    expose:
+      - "9000" # PHP-FPM 內部用
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    name: local_app_network
+    driver: bridge
+    external: true
